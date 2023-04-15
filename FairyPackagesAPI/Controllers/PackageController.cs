@@ -36,6 +36,25 @@ namespace FairyWeddingsAPI.Controllers
         }
 
         /// <summary>
+        /// Get the package by ID and get the Total to added services
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="calculateTotal"></param>
+        /// <returns>Return the package updated Total</returns>
+        [HttpGet("{id}/total")]
+        public IActionResult GetPackageWithTotal(int id, bool calculateTotal)
+        {
+            if (calculateTotal)
+            {
+                return Ok(_packageService.CalculateGrossTotalForPackage(id));
+            }
+            else
+            {
+                return Ok(_packageService.GetPackageById(id));
+            }
+        }
+
+        /// <summary>
         /// Add a package
         /// </summary>
         /// <param name="package"></param>

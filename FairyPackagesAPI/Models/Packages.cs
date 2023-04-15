@@ -12,6 +12,8 @@
         public string? packageService { get; set; }
         public double ? packageTotal { get; set; }
         public bool? packageAccomadation { get; set; }
+        public bool? packageEntertainment { get; set; }
+        public bool? packageCatering { get; set; }
 
 
 

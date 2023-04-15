@@ -11,6 +11,25 @@ namespace FairyWeddingsAPI.Services
             return package;
         }
 
+        public Packages? CalculateGrossTotalForPackage(int id)
+        {
+            var selectedPackage = PackagesMockDataService.Packages.FirstOrDefault(d => d.packageID == id);
+            if (selectedPackage != null)
+            {
+                var accomadationPrice = selectedPackage.packageAccomadation == true ? selectedPackage.packageType == "premium" ? 50000
+                    : selectedPackage.packageType == "standard" ? 55000 : 60000 : 0;
+
+                var entertainmentPrice = selectedPackage.packageEntertainment == true ? selectedPackage.packageType == "premium" ? 150000
+                    : selectedPackage.packageType == "standard" ? 50000 : 40000 : 0;
+
+                var cateringPrice = selectedPackage.packageCatering == true ? selectedPackage.packageType == "premium" ? 85000
+                    : selectedPackage.packageType == "standard" ? 70000 : 40000 : 0;
+
+                selectedPackage.packageTotal = selectedPackage.packageTotal + accomadationPrice + entertainmentPrice + cateringPrice;
+            }
+            return selectedPackage;
+        }
+
         public bool? DeletePackage(int id)
         {
             Models.Packages selectedPackage = PackagesMockDataService.Packages.FirstOrDefault(x => x.packageID == id);
