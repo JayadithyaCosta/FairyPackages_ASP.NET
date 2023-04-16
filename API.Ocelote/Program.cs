@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 
@@ -34,6 +29,10 @@ namespace API.Ocelot
                         app.UseEndpoints(endpoints =>
                         {
                             endpoints.MapControllers();
+                            endpoints.MapGet("/", async context =>
+                            {
+                                await context.Response.WriteAsync("Welcome to the Fairy Packages Ocelot gateway!");
+                            });
                         });
 
                         app.UseOcelot().Wait(); // Use Ocelot middleware
