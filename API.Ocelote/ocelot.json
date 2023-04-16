@@ -1,0 +1,56 @@
+
+  {
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/api/v1/Package",
+        "UpstreamPathTemplate": "/v1/gateway/packages",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5154
+          }
+        ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/v1/Package/{Id}",
+        "UpstreamPathTemplate": "/v1/gateway/packages/{Id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5154
+          }
+        ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/v1/Reservations",
+        "UpstreamPathTemplate": "/v1/gateway/reservations",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5154
+          }
+        ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/v1/Reservations/{Id}",
+        "UpstreamPathTemplate": "/v1/gateway/reservations/{Id}",
+        "UpstreamHttpMethod": [ "Get" ],
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5154
+          }
+        ]
+      }
+    ],
+    "GlobalConfiguration": {
+      "BaseUrl": "http://localhost:5151"
+    }
+  }
