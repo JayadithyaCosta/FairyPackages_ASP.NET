@@ -9,7 +9,7 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 5154
+            "Port": 5045
           }
         ]
       },
@@ -21,7 +21,7 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 5154
+            "Port": 5045
           }
         ]
       },
@@ -33,7 +33,7 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 5154
+            "Port": 5257
           }
         ]
       },
@@ -45,7 +45,7 @@
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
-            "Port": 5154
+            "Port": 5257
           }
         ]
       }
